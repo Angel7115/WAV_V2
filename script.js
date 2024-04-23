@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', async function() {
           'ir a youtube': () => window.open('https://www.youtube.com', '_blank'),
           'ir a facebook': () => window.open('https://www.facebook.com', '_blank'),
           'ir a github': () => window.open('https://www.github.com', '_blank'),
-          'maximizar ventana': () => window.resizeTo(screen.width, screen.height),
-          'minimizar ventana': () => window.resizeTo(screen.width / 2, screen.height / 2),
-          'cerrar pestaña': () => window.close(),
-          'cerrar navegador': () => window.close()
+          //'maximizar ventana': () => window.resizeTo(screen.width, screen.height),
+          //'minimizar ventana': () => window.resizeTo(screen.width / 2, screen.height / 2),
+          //'cerrar pestaña': () => window.close(),
+         // 'cerrar navegador': () => window.close()
         };
 
         for (const keyword in browserKeywords) {
