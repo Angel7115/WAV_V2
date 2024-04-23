@@ -57,7 +57,7 @@
     function mostrarUltimoRegistro(registro) {
       const textoUltimoRegistro = document.getElementById('texto-ultimo-registro');
       if (registro) {
-        textoUltimoRegistro.textContent = `Último registro:<mark> ${registro.Comando} (ID: ${registro.idComando}) <mark>.`;
+        textoUltimoRegistro.textContent = `Último registro: <mark><b> ${registro.Comando} (ID: ${registro.idComando}) </b></mark>.`;
       } else {
         textoUltimoRegistro.textContent = 'No hay registros disponibles';
       }
