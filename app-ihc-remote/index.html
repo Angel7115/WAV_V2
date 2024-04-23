@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificación por Voz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Identificación por Voz</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://angel7115.github.io/WAV2/">Ambiente de lectura de órdenes</a>
+        </li>
+        <li class="nav-item">
+          <!-- Inserta el enlace a la página de la versión 2 del código aquí -->
+          <!-- <a class="nav-link" href="#">Ambiente de ejecución de órdenes</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://6605ef1dd92166b2e3c3035d.mockapi.io/Comandos">MockAPI</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1>Último Registro:</h1>
+    <p id="texto-ultimo-registro" class="lead">Cargando último registro...</p>
+  </div>
+
+  <footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+      <span class="text-muted">Alvarez Melo Angel Jafet, IHC, Todos los derechos reservados &copy; 2024</span>
+    </div>
+  </footer>
+
+  <script src="jsmain.js"></script>
+  <script>
+    const mockApiUrl = 'https://6605ef1dd92166b2e3c3035d.mockapi.io/Comandos';
+
+    function obtenerUltimoRegistro() {
+      fetch(mockApiUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('No se pudo obtener el último registro');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const ultimoRegistro = data[data.length - 1]; // Obtiene el último registro directamente sin ordenar
+          mostrarUltimoRegistro(ultimoRegistro);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+    function mostrarUltimoRegistro(registro) {
+      const textoUltimoRegistro = document.getElementById('texto-ultimo-registro');
+      if (registro) {
+        textoUltimoRegistro.textContent = `Último registro: ${registro.Comando} (ID: ${registro.idComando})`;
+      } else {
+        textoUltimoRegistro.textContent = 'No hay registros disponibles';
+      }
+    }
+
+    // Función para actualizar y mostrar el último registro cada 4 segundos
+    function actualizarCadaCuatroSegundos() {
+      obtenerUltimoRegistro();
+      setInterval(obtenerUltimoRegistro, 4000);
+    }
+
+    // Llama a la función para actualizar cada 4 segundos cuando el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      actualizarCadaCuatroSegundos();
+    });
+  </script>
+</body>
+</html>

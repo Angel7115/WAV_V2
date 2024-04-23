@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Identificación por Voz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    /* Estilos personalizados aquí */
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Identificación por Voz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+    
+          <!-- Enlaces hacia las páginas solicitadas -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://angel7115.github.io/WAV2/">Ambiente de lectura de órdenes</a>
+          </li>
+          <li class="nav-item">
+            <!-- Aquí dejé un marcador para que puedas agregar el enlace después -->
+            <a class="nav-link" href="#">Ambiente de ejecución de órdenes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://6605ef1dd92166b2e3c3035d.mockapi.io/Comandos">MockAPI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="mt-2">Identificación por Voz</h1>
+    <p>Haz clic en el botón de abajo y di tu orden:</p>
+    <!-- El botón de inicio del micrófono ha sido eliminado -->
+    <!-- <button id="voice-btn" class="btn btn-primary">Identificar Orden por Voz</button> -->
+    <div id="result-container" class="mt-2"></div>
+  </div>
+<br>
+<!--   SECCION PARA CONTROL DE TEXTO      -->
+  <div class="container mt-5">
+    <span class=" fw-bold " id="controlTexto"> Este texto cambia de tamaño con comandos!</span>
+  </div>
+<br>
+<!--   FINSECCION PARA CONTROL DE TEXTO      -->
+
+<!-- Sección para mostrar los comandos posibles -->
+<div class="container mt-5">
+  <h3>Comandos Posibles:</h3>
+  <h5>Comandos de tamaño:</h5>
+  <ul>
+    <li><strong>"tamaño 1":</strong> Fijar el tamaño de texto a fs-1</li>
+    <li><strong>"tamaño 2":</strong> Fijar el tamaño de texto a fs-2</li>
+    <li><strong>"tamaño 3":</strong> Fijar el tamaño de texto a fs-3</li>
+    <li><strong>"tamaño 4":</strong> Fijar el tamaño de texto a fs-4</li>
+    <li><strong>"tamaño 5":</strong> Fijar el tamaño de texto a fs-5</li>
+    <li><strong>"tamaño 6":</strong> Fijar el tamaño de texto a fs-6</li>
+
+  </ul>
+
+  <h5>Comandos de Navegador:</h5>
+  <ul>
+    <li><strong>"abrir pestaña":</strong> abre una nueva pestaña (busqueda Google)</li>
+    <li><strong>"ir a youtube":</strong> Abre youtube en una pestaña nueva</li>
+    <li><strong>"ir a facebook":</strong> Abre facebook en una pestaña nueva</li>
+    <li><strong>"ir a github":</strong> Abre github en una pestaña nueva</li>
+
+    <li><strong><s>"maximizar ventana":</strong> Fijar la ventana al 100% de el tamaño de pantalla</s></li>
+    <li><strong>"<s>minimizar ventana":</strong> Fija la ventana al 50% de tamaño de pantalla</s></li>
+    <li><strong>"cerrar pestaña":</strong> Cierra la pestaña (solo abiertas por el mismo script)</li>
+    <li><strong>"cerrar Navegador":</strong> Cierra el navegador</li>
+
+
+
+  </ul>
+</div>
+<!-- Fin de la sección de comandos -->
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+  <div class="container text-center">
+    <span class="text-muted">Alvarez Melo Angel Jafet, IHC, Todos los derechos reservados &copy; 2024</span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
